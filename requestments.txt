@@ -1,0 +1,5 @@
+aiohttp==3.5.4
+trafaret==1.2.0
+aiohttp_jinja2==1.1.1
+pyyaml
+aioredis==1.2.0
