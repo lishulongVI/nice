@@ -64,8 +64,12 @@ async def init_app(loop: asyncio.AbstractEventLoop):
     return app, CONF['host'], CONF['port']
 
 
-if __name__ == '__main__':
+def main():
     logging.basicConfig(level=logging.INFO)
     loop = asyncio.get_event_loop()
     app, host, port = loop.run_until_complete(init_app(loop=loop))
     web.run_app(app=app, host=host, port=port)
+
+
+if __name__ == '__main__':
+    main()

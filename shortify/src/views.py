@@ -27,7 +27,8 @@ class SiteHandler:
         await self._redis.set('shortify:{}'.format(path), url)
         host = self._conf['host']
         port = self._conf['port']
-        url_ = f'http://{host}:{port}/{path}'
+        https = self._conf['https']
+        url_ = f'{https}/{path}'
         return web.json_response({'url': url_})
 
     async def redirect(self, request):
